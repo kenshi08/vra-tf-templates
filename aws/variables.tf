@@ -1,54 +1,24 @@
-#main config for AWS provider
+variable "public_key_path" {
+  description = <<DESCRIPTION
+Path to the SSH public key to be used for authentication.
+Ensure this keypair is added to your local SSH agent so provisioners can
+connect.
+Example: ~/.ssh/terraform.pub
+DESCRIPTION
+}
+
+variable "key_name" {
+  description = "Desired name of AWS key pair"
+}
+
 variable "aws_region" {
-  description = "Default AWS provider region"
-  default = "ap-southeast-1"
+  description = "AWS region to launch servers."
+  default     = "us-west-2"
 }
 
-# main creds for AWS connection
-variable "aws_access_key_id" {
-  description = "AWS access key"
-}
-
-variable "aws_secret_access_key" {
-  description = "AWS secret access key"
-}
-
-variable "availability_zone" {
-  description = "availability zone used for the demo, based on region"
+# Ubuntu Precise 12.04 LTS (x64)
+variable "aws_amis" {
   default = {
-    ap-southeast-1 = "ap-southeast-1a"
+    ap-southeast-1 = "ami-6051eb03"
   }
-}
-
-########################### dev VPC Config ##################################
-
-variable "vpc_name" {
-  description = "VPC for building dev env"
-  default ="DevTerraformVPC"
-}
-
-variable "vpc_region" {
-  description = "AWS region"
-  default = "ap-southeast-1"
-}
-
-variable "vpc_cidr_block" {
-  description = "Uber IP addressing for dev Network"
-  default = "10.194.0.0/16"
-}
-
-variable "vpc_public_subnet_cidr" {
-  description = "Public 0.0 CIDR for externally accessible subnet"
-  default= "10.194.10.0/24"
-}
-
-
-variable "vpc_private_subnet_cidr" {
-  description = "Private CIDR for internally accessible subnet"
-  default= "10.194.20.0/24"
-}
-
-variable "vpc_access_from_ip_range" {
-  description = "Private CIDR for internally accessible subnet"
-  default= "0.0.0.0/0"
 }
