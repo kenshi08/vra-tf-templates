@@ -1,7 +1,7 @@
 #main config for AWS provider
 variable "aws_region" {
   description = "Default AWS provider region"
-  default = "us-west-1"
+  default = "ap-southeast-1"
 }
 
 # main creds for AWS connection
@@ -16,7 +16,7 @@ variable "aws_secret_access_key" {
 variable "availability_zone" {
   description = "availability zone used for the demo, based on region"
   default = {
-    us-east-1 = "us-east-1a"
+    ap-southeast-1 = "ap-southeast-1a"
   }
 }
 
@@ -29,7 +29,7 @@ variable "vpc_name" {
 
 variable "vpc_region" {
   description = "AWS region"
-  default = "us-east-1"
+  default = "ap-southeast-1"
 }
 
 variable "vpc_cidr_block" {
