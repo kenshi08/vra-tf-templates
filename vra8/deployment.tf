@@ -14,5 +14,6 @@ resource "vra_deployment" "this" {
     vra_network_profile.simple,
     vra_blueprint.this,
     vra_zone.zone_aws_west
+    time_sleep.wait_180_seconds
   ]
 }
