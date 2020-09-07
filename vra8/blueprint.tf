@@ -11,7 +11,6 @@ inputs:
     type: string
     title: Flavor
     enum:
-      - x-small
       - large
       - medium
       - small
@@ -19,8 +18,7 @@ inputs:
     type: string
     title: Image
     enum:
-      - ubuntu-xenial
-      - ubuntu-bionic
+      - ubuntu1604
 resources:
   Web_Server:
     type: Cloud.Machine

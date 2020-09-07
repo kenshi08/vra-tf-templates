@@ -48,11 +48,6 @@ resource "vra_flavor_profile" "flavor_west" {
   region_id   = data.vra_region.region_aws_west.id
 
   flavor_mapping {
-    name          = "x-small"
-    instance_type = "t2.micro"
-  }
-
-  flavor_mapping {
     name          = "small"
     instance_type = "t2.small"
   }
@@ -76,8 +71,8 @@ resource "vra_image_profile" "image_west" {
   region_id   = data.vra_region.region_aws_west.id
 
   image_mapping {
-    name       = "ubuntu-bionic"
-    image_name = "ami-0dd655843c87b6930"
+    name       = "ubuntu1604"
+    image_name = "ami-0dbf5ea29a7fc7e05"
   }
 }
 
