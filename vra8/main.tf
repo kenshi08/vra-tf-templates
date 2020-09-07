@@ -22,20 +22,6 @@ data "vra_region" "region_aws_west" {
   region           = var.region
 }
 
-# This resource will destroy (potentially immediately) after null_resource.next
-resource "null_resource" "previous" {}
-
-resource "time_sleep" "wait_30_seconds" {
-  depends_on = [null_resource.previous]
-
-  create_duration = "60s"
-}
-
-# This resource will create (at least) 30 seconds after null_resource.previous
-resource "null_resource" "next" {
-  depends_on = [time_sleep.wait_30_seconds]
-}
-
 # Configure a new Cloud Zone
 resource "vra_zone" "zone_aws_west" {
   depends_on = [vra_cloud_account_aws.this]
