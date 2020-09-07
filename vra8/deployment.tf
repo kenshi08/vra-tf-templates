@@ -7,7 +7,7 @@ resource "vra_deployment" "this" {
 
   inputs = {
     flavor = "small"
-    image  = "ubuntu-bionic"
+    image  = "ubuntu1604"
   }
   depends_on = [
     vra_project.this, 
