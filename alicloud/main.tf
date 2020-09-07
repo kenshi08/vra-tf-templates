@@ -47,7 +47,7 @@ resource "alicloud_security_group_rule" "allow_all_tcp" {
 resource "alicloud_instance" "instance" {
   # cn-beijing
   availability_zone = "ap-southeast-1a"
-  security_groups = "${alicloud_security_group.default. *.id}"
+  security_groups = "${alicloud_security_group.default.*.id}"
 
   # series III
   instance_type        = "ecs.n2.small"
