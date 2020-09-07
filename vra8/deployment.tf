@@ -12,6 +12,7 @@ resource "vra_deployment" "this" {
   depends_on = [
     vra_project.this, 
     vra_network_profile.simple,
-    vra_blueprint.this
+    vra_blueprint.this,
+    vra_zone.zone_aws_west
   ]
 }
