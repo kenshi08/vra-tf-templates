@@ -1,0 +1,2 @@
+variable "win_password" {
+}
