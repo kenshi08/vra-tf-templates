@@ -6,7 +6,7 @@ provider "hyperv" {
   port            = 5986
   https           = false
   insecure        = true
-  use_ntlm        = true
+  use_ntlm        = false
   tls_server_name = ""
   cacert_path     = ""
   cert_path       = ""
