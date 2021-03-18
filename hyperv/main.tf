@@ -3,7 +3,7 @@ provider "hyperv" {
   user            = "Administator"
   password        = var.win_password
   host            = "ec2-3-1-218-227.ap-southeast-1.compute.amazonaws.com"
-  port            = 5986
+  port            = 5985
   https           = false
   insecure        = true
   use_ntlm        = false
